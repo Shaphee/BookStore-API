@@ -18,6 +18,8 @@ using System.Threading.Tasks;
 using OpenXmlPowerTools;
 using BookStore_API.Contracts;
 using BookStore_API.Services;
+using BookStore_API.Mappings;
+using AutoMapper;
 
 namespace BookStore_API
 {
@@ -49,6 +51,8 @@ namespace BookStore_API
                 .AllowAnyHeader());
             });
 
+            services.AddAutoMapper(typeof(Maps));
+           
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
